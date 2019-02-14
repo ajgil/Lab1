@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 // Decorador -- se el pasan los objetos selectos, template y estilos.
 @Component({
@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
 })
 
 export class HeaderComponent {
+    @Output() featureSelected = new EventEmitter<string>();
+    
+    onSelect(feature: string){
+        this.featureSelected.emit(feature);
+    }
 
 }

@@ -16,7 +16,12 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-      Ingredientes
+      <ul class="list-group">
+        <li class="list-group-item"
+        *ngFor="let ingredient of recipe.ingredients">
+        {{ ingredient.name }} - {{ ingredient.amount }}
+      </li>
+      </ul>
     </div>
 </div>
 <div class="row">
@@ -36,7 +41,7 @@
 <div ngbDropdown class="d-inline-block" appDropdown>
     <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Gestionar Receta</button>
     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-      <button class="dropdown-item">Añadir a Cesta</button>
+      <button class="dropdown-item" (click)="onAddToShoppingList()">Añadir a Cesta</button>
       <button class="dropdown-item">Editar Receta</button>
       <button class="dropdown-item">Eliminar Receta</button>
     </div>

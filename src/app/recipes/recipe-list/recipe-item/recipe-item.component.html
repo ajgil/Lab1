@@ -1,4 +1,4 @@
-<a href="#" class="list-group-item flex-column" (click)="onSelected()">
+<a class="list-group-item flex-column" [routerLink]="[index]" routerLinkActive="active">
     <div class="d-flex">
         <h4 class="p-2">{{ recipe.name }}</h4>
         <p class="p-2">{{ recipe.description }}</p>
